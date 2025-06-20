@@ -50,7 +50,8 @@ jobs:
           go-version: "1.23.5"
 
       - name: Build Binaries
-        run: mkdir -p bin
+        run: |
+          mkdir -p bin
           GOOS=linux GOARCH=amd64 go build -o ./bin/go-api-to-k8s .
 
       - name: Set up QEMU
